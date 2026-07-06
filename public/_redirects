@@ -1,3 +1,8 @@
-# SPA fallback — keep in sync with the [[redirects]] block in netlify.toml.
-# Netlify uses this file if it's present, regardless of netlify.toml.
+# Route frontend API calls directly to your Render backend
+/api/*  https://studysync-backend.onrender.com/api/:splat  200
+
+# Route frontend WebSocket/Socket.io traffic to your Render backend
+/socket.io/*  https://studysync-backend.onrender.com/socket.io/:splat  200!
+
+# Handle React Router client-side page routing (keeps pages from throwing 404 on refresh)
 /*  /index.html  200
