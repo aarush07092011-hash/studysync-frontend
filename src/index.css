@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* Light mode override (toggled by .light class on <html>) */
+  html.light body {
+    background: #F8FAFC;
+    color: #0F172A;
+  }
+}
+
+@layer components {
+  /* Skeleton loader — shimmer animation */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.08) 0%,
+      rgba(148, 163, 184, 0.16) 50%,
+      rgba(148, 163, 184, 0.08) 100%
+    );
+    background-size: 200% 100%;
+    @apply animate-shimmer rounded;
+  }
+
+  /* Custom scrollbar to fit the dark theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0F172A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #273449;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3B82F6;
+  }
+}

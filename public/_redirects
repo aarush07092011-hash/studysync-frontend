@@ -1,0 +1,3 @@
+# SPA fallback — keep in sync with the [[redirects]] block in netlify.toml.
+# Netlify uses this file if it's present, regardless of netlify.toml.
+/*  /index.html  200
